@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-ink dark:bg-paperdark dark:text-inkdark font-sans antialiased transition-colors duration-300;
+}
+
+::selection {
+  @apply bg-accentlight/30;
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-5xl px-6;
+}
+
+.section-label {
+  @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-muted;
+}
+
+.link-underline {
+  @apply border-b border-line dark:border-linedark hover:border-accentlight hover:text-accent dark:hover:text-accentlight transition-colors;
+}
+
+.card {
+  @apply rounded-xl border border-line dark:border-linedark bg-white/60 dark:bg-white/5 backdrop-blur-sm;
+}
