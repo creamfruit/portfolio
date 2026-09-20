@@ -1,41 +1,58 @@
+import Link from 'next/link';
 import Reveal from '@/components/Reveal';
 import StatCounter from '@/components/StatCounter';
 import CombatSimulator from '@/components/CombatSimulator';
 import FigmaComponentViewer from '@/components/FigmaComponentViewer';
-import { runeted, runetedStats } from '@/lib/data';
+import ScrollHero from '@/components/ScrollHero';
+import Parallax from '@/components/Parallax';
+import { runeted, runetedStats, runetedScreens } from '@/lib/data';
 
 export const metadata = { title: 'Runeted — Chong Li Sean' };
 
 export default function RunetedPage() {
   return (
     <div>
-      <Reveal>
-        <p className="section-label">{runeted.status}</p>
-        <h1 className="mt-3 font-serif text-4xl font-medium">{runeted.name}</h1>
-        <p className="mt-2 text-lg text-muted">{runeted.tagline}</p>
-        <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-muted">
-          {runeted.description}
-        </p>
-        <div className="mt-5 flex flex-wrap gap-2">
-          {runeted.stack.map((t) => (
-            <span
-              key={t}
-              className="rounded-full border border-line dark:border-linedark px-2.5 py-0.5 text-[11px] text-muted"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
-      </Reveal>
+      <ScrollHero>
+        <Reveal>
+          <p className="section-label">{runeted.status}</p>
+          <h1 className="mt-3 font-serif text-4xl font-medium">{runeted.name}</h1>
+          <p className="mt-2 text-lg text-muted">{runeted.tagline}</p>
+          <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-muted">
+            {runeted.description}
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {runeted.stack.map((t) => (
+              <span
+                key={t}
+                className="rounded-full border border-line dark:border-linedark px-2.5 py-0.5 text-[11px] text-muted"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </Reveal>
+      </ScrollHero>
 
-      {/* TODO: swap in real screenshots once exported — see /public/images */}
-      <Reveal delay={0.1} className="mt-16">
-        <div className="card flex h-56 items-center justify-center border-dashed text-center text-sm text-muted sm:h-72">
-          Drop a Runeted screenshot or GIF here — replace this block in
-          app/projects/runeted/page.jsx with an &lt;Image /&gt; once you export
-          one from the game.
-        </div>
-      </Reveal>
+      <Parallax strength={16} className="mt-16">
+        <Reveal>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {runetedScreens.map((shot) => (
+              <figure key={shot.src} className="overflow-hidden rounded-xl border border-line dark:border-linedark">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={shot.src}
+                  alt={shot.alt}
+                  loading="lazy"
+                  className="aspect-video w-full object-cover"
+                />
+                <figcaption className="border-t border-line dark:border-linedark px-3 py-2 text-xs text-muted">
+                  {shot.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </Reveal>
+      </Parallax>
 
       <Reveal delay={0.15} className="mt-16">
         <p className="section-label">By the numbers</p>
@@ -67,7 +84,11 @@ export default function RunetedPage() {
         </h2>
         <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
           Componentization over static mockups — one base component drives
-          every visual variant used in production.
+          every visual variant used in production.{' '}
+          <Link href="/design" className="link-underline">
+            See the real file
+          </Link>
+          .
         </p>
         <div className="mt-6">
           <FigmaComponentViewer />

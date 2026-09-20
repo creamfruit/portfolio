@@ -1,11 +1,14 @@
 import Reveal from '@/components/Reveal';
+import Parallax from '@/components/Parallax';
 
 export const metadata = { title: 'Photography — Chong Li Sean' };
 
-// Add your own photos: drop image files in /public/images/photography/
-// and replace the placeholder grid below with <Image /> tags pointing at
-// them (e.g. /images/photography/your-file.jpg).
-const placeholders = Array.from({ length: 6 });
+const photos = [
+  { src: '/images/photography/manarola-italy.jpg', alt: 'Manarola, Cinque Terre, Italy', caption: 'Manarola, Cinque Terre — Italy' },
+  { src: '/images/photography/colosseum-rome.jpg', alt: 'The Colosseum, Rome, Italy', caption: 'Colosseum — Rome, Italy' },
+  { src: '/images/photography/florence-arno.jpg', alt: 'The River Arno, Florence, Italy', caption: 'River Arno — Florence, Italy' },
+  { src: '/images/photography/malaysia-highlands.jpg', alt: 'Mountain road in the Malaysian highlands', caption: 'Highlands — Malaysia' },
+];
 
 export default function PhotographyPage() {
   return (
@@ -13,22 +16,23 @@ export default function PhotographyPage() {
       <Reveal>
         <p className="section-label">Photography</p>
         <h1 className="mt-3 font-serif text-4xl font-medium">Photography</h1>
-        <p className="mt-4 max-w-xl text-sm text-muted">
-          Add your photos to <code>/public/images/photography/</code> and
-          swap them in below.
-        </p>
       </Reveal>
 
-      <Reveal delay={0.1} className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3">
-        {placeholders.map((_, i) => (
-          <div
-            key={i}
-            className="card flex aspect-square items-center justify-center border-dashed text-xs text-muted"
-          >
-            image {i + 1}
+      <Parallax strength={14} className="mt-10">
+        <Reveal>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {photos.map((p) => (
+              <figure key={p.src} className="overflow-hidden rounded-xl border border-line dark:border-linedark">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={p.src} alt={p.alt} loading="lazy" className="aspect-[4/3] w-full object-cover" />
+                <figcaption className="border-t border-line dark:border-linedark px-3 py-2 text-xs text-muted">
+                  {p.caption}
+                </figcaption>
+              </figure>
+            ))}
           </div>
-        ))}
-      </Reveal>
+        </Reveal>
+      </Parallax>
     </div>
   );
 }

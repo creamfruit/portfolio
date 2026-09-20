@@ -51,8 +51,18 @@ then see the comment at the bottom of
 
 ## Deploy to GitHub Pages — free, and it stays live
 
-1. Create a new **public** repository on GitHub (any name — e.g.
-   `portfolio`).
+Two ways to name the repo — pick one:
+
+- **`portfolio`** (or anything) → your site lives at
+  `https://YOUR_USERNAME.github.io/portfolio/`.
+- **`YOUR_USERNAME.github.io`** exactly (e.g. `creamfruit.github.io`) →
+  GitHub treats this name specially and serves your site at the bare
+  root, `https://YOUR_USERNAME.github.io` — no path, much easier to say
+  or type out loud. **Recommended** for a resume/portfolio link. The
+  config already handles both automatically, no code changes needed
+  either way.
+
+1. Create a new **public** repository on GitHub, named either way above.
 2. Push this folder to it:
 
    ```bash

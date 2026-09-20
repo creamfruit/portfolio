@@ -91,22 +91,112 @@ export const runeted = {
     'Maintained a 140+ test regression suite covering combat resolution, economy integrity and cross-account data isolation — every change checked against measured results before being trusted.',
     'Built a server-authoritative engine in Python/FastAPI handling real-time combat, collision resolution and A* pathfinding, with all state validated server-side to protect the live economy from client-side exploitation.',
     'Designed and coded the full front end in vanilla JavaScript and CSS, directing AI-assisted development across 79 structured phases with living architecture documentation.',
-    "Designed the UI's item system in Figma as a single component with 11 rarity tiers and hover/idle states, matching production dimensions exactly so every visual variant stays in sync with the shipped game.",
+    "Designed the UI's item system in Figma as a single component with real rarity tiers and hover/idle states, matching production dimensions exactly so every visual variant stays in sync with the shipped game.",
   ],
+  // Real layer names from the Figma file's rarity/state component system.
+  figmaFileUrl:
+    'https://www.figma.com/design/5egeJE1emzYjLcTDVhTXEV/Runeted-Slot-Frames?t=QPkWojMGmnfShivQ-1',
   rarityTiers: [
     { name: 'Common', color: '#9CA3AF' },
     { name: 'Uncommon', color: '#4ADE80' },
-    { name: 'Rare', color: '#38BDF8' },
-    { name: 'Superior', color: '#818CF8' },
-    { name: 'Epic', color: '#C084FC' },
-    { name: 'Exotic', color: '#F472B6' },
+    { name: 'Rare', color: '#60A5FA' },
+    { name: 'Epic', color: '#A78BFA' },
     { name: 'Legendary', color: '#FBBF24' },
-    { name: 'Mythic', color: '#FB7185' },
-    { name: 'Ascended', color: '#2DD4BF' },
-    { name: 'Divine', color: '#F0ABFC' },
-    { name: 'Primordial', color: '#F97316' },
+    { name: 'Mythic', color: '#F87171' },
+    { name: 'Supreme', color: '#F472B6' },
+    { name: 'Relic', color: '#818CF8' },
+    { name: 'Exalted', color: '#2DD4BF' },
+    { name: 'Transcendent', color: '#FB923C' },
+    { name: 'Primordial', color: '#22D3EE' },
+  ],
+  // Real classes from character creation — a class amplifies one archetype
+  // and grants a signature skill; it never restricts what you can equip.
+  classes: [
+    {
+      name: 'Warden',
+      blurb: "Turns the enemy's aggression into its own undoing.",
+      atk: 6,
+      def: 9,
+      spd: 5,
+      color: '#60A5FA',
+      icon: <path d="M12 2 20 5v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V5l8-3Z" />,
+    },
+    {
+      name: 'Reaper',
+      blurb: 'Wins long fights by taking back what it deals out.',
+      atk: 8,
+      def: 6,
+      spd: 5,
+      color: '#F87171',
+      icon: (
+        <>
+          <path d="M5 3v18" />
+          <path d="M5 4c5 0 9 3.2 9 8s-4 8-9 8" />
+        </>
+      ),
+    },
+    {
+      name: 'Channeler',
+      blurb: 'Builds toward one decisive window and spends it well.',
+      atk: 9,
+      def: 4,
+      spd: 6,
+      color: '#A78BFA',
+      icon: (
+        <path d="M12 2v6M12 16v6M4.2 4.2l4.2 4.2M15.6 15.6l4.2 4.2M2 12h6M16 12h6M4.2 19.8l4.2-4.2M15.6 8.4l4.2-4.2" />
+      ),
+    },
+    {
+      name: 'Duelist',
+      blurb: 'Fast, precise, and punishing against a slow opponent.',
+      atk: 8,
+      def: 4,
+      spd: 9,
+      color: '#4ADE80',
+      icon: (
+        <>
+          <path d="M4 20 20 4" />
+          <path d="M20 20 4 4" />
+        </>
+      ),
+    },
+    {
+      name: 'Berserker',
+      blurb: 'Trades safety for damage and makes the gamble pay.',
+      atk: 10,
+      def: 3,
+      spd: 6,
+      color: '#FB923C',
+      icon: <path d="M4 20 12 4l8 16-8-4-8 4Z" />,
+    },
+    {
+      name: 'Wanderer',
+      blurb: 'Belongs to no school, and can afford combinations no specialist can.',
+      atk: 6,
+      def: 6,
+      spd: 7,
+      color: '#FBBF24',
+      icon: (
+        <>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M14.5 9.5 10 10l-.5 4.5L14 14l.5-4.5Z" />
+        </>
+      ),
+    },
   ],
 };
+
+export const runetedScreens = [
+  { src: '/images/runeted/hub.png', alt: 'Runeted hub menu', caption: 'Hub' },
+  { src: '/images/runeted/combat.png', alt: 'Real-time combat', caption: 'Real-time combat' },
+  { src: '/images/runeted/character-creation.png', alt: 'Character creation', caption: 'Character creation' },
+  { src: '/images/runeted/equipment.png', alt: 'Equipment screen', caption: 'Equipment & rarity' },
+  { src: '/images/runeted/runes.png', alt: 'Rune loadout screen', caption: 'Rune loadout' },
+  { src: '/images/runeted/victory-loot.png', alt: 'Victory screen with loot', caption: 'Victory & loot' },
+  { src: '/images/runeted/risk-reward.png', alt: 'Bank or push your luck', caption: 'Risk vs. reward' },
+  { src: '/images/runeted/wandering-merchant.png', alt: 'Wandering merchant dialog', caption: 'Wandering merchant' },
+  { src: '/images/runeted/merchant-map.png', alt: 'World map with merchant', caption: 'World map' },
+];
 
 export const projects = [
   {

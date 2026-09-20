@@ -1,5 +1,5 @@
 import Reveal from '@/components/Reveal';
-import FigmaComponentViewer from '@/components/FigmaComponentViewer';
+import FigmaComponentViewer, { FigmaEmbed } from '@/components/FigmaComponentViewer';
 
 export const metadata = { title: 'Design — Chong Li Sean' };
 
@@ -19,18 +19,24 @@ export default function DesignPage() {
       </Reveal>
 
       <Reveal delay={0.1} className="mt-12">
-        <FigmaComponentViewer />
+        <p className="section-label">The real file, live</p>
+        <div className="mt-4">
+          <FigmaEmbed />
+        </div>
       </Reveal>
 
-      {/*
-        TODO: paste a public Figma file link here once you have one, and
-        swap the iframe embed in components/FigmaComponentViewer.jsx (see
-        the comment at the bottom of that file) — or add a screenshot
-        gallery below of your Figma frames.
-      */}
       <Reveal delay={0.15} className="mt-16">
-        <div className="card flex h-48 items-center justify-center border-dashed text-center text-sm text-muted">
-          Add Figma frame screenshots or an embedded file link here.
+        <p className="section-label">Interactive recreation</p>
+        <h2 className="mt-2 font-serif text-2xl font-medium">
+          Rarity scanner
+        </h2>
+        <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
+          A HUD-styled companion demo — not the file itself, a stylized
+          rebuild of the same idea: one component, real rarity and state
+          properties.
+        </p>
+        <div className="mt-6">
+          <FigmaComponentViewer />
         </div>
       </Reveal>
     </div>
