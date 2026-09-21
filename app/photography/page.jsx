@@ -1,13 +1,14 @@
 import Reveal from '@/components/Reveal';
 import Parallax from '@/components/Parallax';
+import { withBase } from '@/lib/basePath';
 
 export const metadata = { title: 'Photography — Chong Li Sean' };
 
 const photos = [
-  { src: '/images/photography/manarola-italy.jpg', alt: 'Manarola, Cinque Terre, Italy', caption: 'Manarola, Cinque Terre — Italy' },
-  { src: '/images/photography/colosseum-rome.jpg', alt: 'The Colosseum, Rome, Italy', caption: 'Colosseum — Rome, Italy' },
-  { src: '/images/photography/florence-arno.jpg', alt: 'The River Arno, Florence, Italy', caption: 'River Arno — Florence, Italy' },
-  { src: '/images/photography/malaysia-highlands.jpg', alt: 'Mountain road in the Malaysian highlands', caption: 'Highlands — Malaysia' },
+  { src: withBase('/images/photography/manarola-italy.jpg'), alt: 'Manarola, Cinque Terre, Italy', caption: 'Manarola, Cinque Terre — Italy' },
+  { src: withBase('/images/photography/colosseum-rome.jpg'), alt: 'The Colosseum, Rome, Italy', caption: 'Colosseum — Rome, Italy' },
+  { src: withBase('/images/photography/florence-arno.jpg'), alt: 'The River Arno, Florence, Italy', caption: 'River Arno — Florence, Italy' },
+  { src: withBase('/images/photography/malaysia-highlands.jpg'), alt: 'Mountain road in the Malaysian highlands', caption: 'Highlands — Malaysia' },
 ];
 
 export default function PhotographyPage() {

@@ -1,6 +1,7 @@
 // All portfolio content lives here so the components stay clean.
 // Edit this file to update your bio, projects, skills or stats — nothing
 // else in the codebase needs to change.
+import { withBase } from './basePath';
 
 export const profile = {
   name: 'Chong Li Sean',
@@ -187,15 +188,15 @@ export const runeted = {
 };
 
 export const runetedScreens = [
-  { src: '/images/runeted/hub.png', alt: 'Runeted hub menu', caption: 'Hub' },
-  { src: '/images/runeted/combat.png', alt: 'Real-time combat', caption: 'Real-time combat' },
-  { src: '/images/runeted/character-creation.png', alt: 'Character creation', caption: 'Character creation' },
-  { src: '/images/runeted/equipment.png', alt: 'Equipment screen', caption: 'Equipment & rarity' },
-  { src: '/images/runeted/runes.png', alt: 'Rune loadout screen', caption: 'Rune loadout' },
-  { src: '/images/runeted/victory-loot.png', alt: 'Victory screen with loot', caption: 'Victory & loot' },
-  { src: '/images/runeted/risk-reward.png', alt: 'Bank or push your luck', caption: 'Risk vs. reward' },
-  { src: '/images/runeted/wandering-merchant.png', alt: 'Wandering merchant dialog', caption: 'Wandering merchant' },
-  { src: '/images/runeted/merchant-map.png', alt: 'World map with merchant', caption: 'World map' },
+  { src: withBase('/images/runeted/hub.png'), alt: 'Runeted hub menu', caption: 'Hub' },
+  { src: withBase('/images/runeted/combat.png'), alt: 'Real-time combat', caption: 'Real-time combat' },
+  { src: withBase('/images/runeted/character-creation.png'), alt: 'Character creation', caption: 'Character creation' },
+  { src: withBase('/images/runeted/equipment.png'), alt: 'Equipment screen', caption: 'Equipment & rarity' },
+  { src: withBase('/images/runeted/runes.png'), alt: 'Rune loadout screen', caption: 'Rune loadout' },
+  { src: withBase('/images/runeted/victory-loot.png'), alt: 'Victory screen with loot', caption: 'Victory & loot' },
+  { src: withBase('/images/runeted/risk-reward.png'), alt: 'Bank or push your luck', caption: 'Risk vs. reward' },
+  { src: withBase('/images/runeted/wandering-merchant.png'), alt: 'Wandering merchant dialog', caption: 'Wandering merchant' },
+  { src: withBase('/images/runeted/merchant-map.png'), alt: 'World map with merchant', caption: 'World map' },
 ];
 
 export const projects = [
